@@ -1,0 +1,28 @@
+<ul>
+  <li *ngFor="let t of tasks">Task: {{ t.id }}, {{ t.description }} | Completed: {{t.completed}}</li>
+</ul>
+
+<div class="task-froms">
+  <div class="new-task-form">
+    <h3><strong>New Task</strong></h3>
+    <label for="task-description">Task Description: </label>
+    <input
+      id="task-description"
+      type="text"
+      [formControl]="description"
+    />
+
+    <button (click)="addNewTask()">Add new Task</button>
+  </div>
+  <div class="new-task-form">
+    <h3><strong>Filter Task</strong></h3>
+    <label for="task-description">Task Description: </label>
+    <input
+      id="task-description"
+      type="text"
+      [formControl]="filterDescription"
+    />
+
+    <button (click)="filterTask()">Filter by task description</button>
+  </div>
+</div>
